@@ -3,7 +3,8 @@
 var num1 = 0
 var num2 = 0
 var operator = ''
-var x = 10
+
+console.log('Hi')
 
 function onNumClick(elCell) {
     if(!num1) num1 = +elCell.innerText
@@ -15,5 +16,9 @@ function onOperatorClick(elCell) {
 }
 
 function onCalc() {
-    console.log('Calculating')
+    if(num1 && num2 && operator){
+        console.log(`${num1} ${operator} ${num2} = ${+num1 + +num2}`)
+        num1 = num2 = 0
+        operator = ''
+    }
 }
